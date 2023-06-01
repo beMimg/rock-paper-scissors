@@ -29,38 +29,34 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+function game() {
+  let playerScore = 0;
+  let computerScore = 0;
 
-function game(){
-    
-    let playerScore = 0;
-    let computerScore = 0;
+  for(let round = 1; round <= 5; round++ ) {
+    const playerSelection = prompt("Round" + round + ":Rock, paper or scissors?");
+    const computerSelection = getComputerChoice();
+    const result = playRound(playerSelection, computerSelection);
 
-    for(let round = 1; round <= 5; round++ ) {
-        const playerSelection = prompt("Round" + round + ":Rock, paper or scissors?");
-        const computerSelection = getComputerChoice();
-        const result = playRound(playerSelection, computerSelection);
-
-        
-
-        if (result) {
-            playerScore++;
-        } else if (result == false) {
-            computerScore++;
-        }
-        console.log("Round " + round + ": Current Score: " + playerScore + " - " + computerScore  );
+    if (result) {
+      playerScore++;
+    } else if (result == false) {
+      computerScore++;
     }
+    console.log("Round " + round + ": Current Score: " + playerScore + " - " + computerScore  );
+  }
 
-    console.log("GAME OVER");
+  console.log("GAME OVER");
 
-        if (playerScore > computerScore) {
-            alert("YOU WIN THE GAME")
-            console.log("YOU WIN THE GAME");
-        } else if (playerScore < computerScore) {
-            alert("YOU LOST THE GAME")
-            console.log("YOU LOST THE GAME");
-        } else {
-            console.log("its a tie");
-        }
+  if (playerScore > computerScore) {
+    alert("YOU WIN THE GAME")
+    console.log("YOU WIN THE GAME");
+  } else if (playerScore < computerScore) {
+    alert("YOU LOST THE GAME")
+    console.log("YOU LOST THE GAME");
+  } else {
+    console.log("its a tie");
+  }
 }
 
 game();
