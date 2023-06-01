@@ -1,34 +1,31 @@
-function getComputerChoice(){
-    const choices = ["Rock", "Paper", "Scissors"];
-    const randomIndex = Math.floor(Math.random() * choices.length);
-    const randomChoice = choices[randomIndex];
-    console.log(randomChoice);
-    return randomChoice;
+function getComputerChoice() {
+  const choices = ["Rock", "Paper", "Scissors"];
+  const randomIndex = Math.floor(Math.random() * choices.length);
+  const randomChoice = choices[randomIndex];
+  console.log(randomChoice);
+  return randomChoice;
 }
 
 function playRound(playerSelection, computerSelection) {
-    playerSelection = playerSelection.toLowerCase();
-    computerSelection = computerSelection.toLowerCase();
+  playerSelection = playerSelection.toLowerCase();
+  computerSelection = computerSelection.toLowerCase();
     
-
-   if (
-    (playerSelection === "rock" && computerSelection === "paper") ||
-    (playerSelection === "paper" && computerSelection === "scissors") ||
-    (playerSelection === "scissors" && computerSelection === "rock") ){    
-        console.log("You lose! " + computerSelection + " beats " + playerSelection);
-        return false;
-
-    
-    } else if (
-        (playerSelection === "rock" && computerSelection === "scissors") ||
-        (playerSelection === "paper" && computerSelection === "rock") ||
-        (playerSelection === "scissors" && computerSelection === "paper")
-    ){      console.log( "You win! " + playerSelection + " beats " + computerSelection) ;
-            return true;
-
-    } else if (playerSelection === computerSelection){
-        console.log( "It's a draw." );
-
+  if (
+      (playerSelection === "rock" && computerSelection === "paper") ||
+      (playerSelection === "paper" && computerSelection === "scissors") ||
+      (playerSelection === "scissors" && computerSelection === "rock")
+    ) {    
+      console.log("You lose! " + computerSelection + " beats " + playerSelection);
+      return false;
+   } else if (
+      (playerSelection === "rock" && computerSelection === "scissors") ||
+      (playerSelection === "paper" && computerSelection === "rock") ||
+      (playerSelection === "scissors" && computerSelection === "paper")
+    ) {  
+      console.log( "You win! " + playerSelection + " beats " + computerSelection) ;
+      return true;
+  } else if (playerSelection === computerSelection){
+      console.log( "It's a draw." );
     }
 }
 
