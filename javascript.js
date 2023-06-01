@@ -17,14 +17,14 @@ function playRound(playerSelection, computerSelection) {
     ) {    
       console.log("You lose! " + computerSelection + " beats " + playerSelection);
       return false;
-   } else if (
+    } else if (
       (playerSelection === "rock" && computerSelection === "scissors") ||
       (playerSelection === "paper" && computerSelection === "rock") ||
       (playerSelection === "scissors" && computerSelection === "paper")
     ) {  
       console.log( "You win! " + playerSelection + " beats " + computerSelection) ;
       return true;
-  } else if (playerSelection === computerSelection){
+    } else if (playerSelection === computerSelection){
       console.log( "It's a draw." );
     }
 }
