@@ -18,6 +18,10 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
   computerSelection = computerSelection.toLowerCase();
 
+  while(outcomeDiv.firstChild) {
+    outcomeDiv.removeChild(outcomeDiv.firstChild);
+  }
+
   if (
       (playerSelection === "rock" && computerSelection === "paper") ||
       (playerSelection === "paper" && computerSelection === "scissors") ||
