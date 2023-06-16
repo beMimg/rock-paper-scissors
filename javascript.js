@@ -2,6 +2,8 @@ const rockButton = document.querySelector(".rock");
 const paperButton = document.querySelector(".paper");
 const scissorsButton = document.querySelector(".scissors");
 const outcomeDiv = document.querySelector('.outcome');
+const playerScoreDiv = document.querySelector('.player_score');
+const computerScoreDiv = document.querySelector('.computer_score');
 let playerScore = 0;
 let computerScore = 0;
 
@@ -20,17 +22,17 @@ function playRound(playerSelection, computerSelection) {
       (playerSelection === "rock" && computerSelection === "paper") ||
       (playerSelection === "paper" && computerSelection === "scissors") ||
       (playerSelection === "scissors" && computerSelection === "rock")
-    ) {
+  ){
       const p = document.createElement('p');
       p.innerText = `You lose! ${computerSelection} beats ${playerSelection}`;
       outcomeDiv.appendChild(p);
       computerScore++;
       return false;
-    } else if (
+  } else if (
       (playerSelection === "rock" && computerSelection === "scissors") ||
       (playerSelection === "paper" && computerSelection === "rock") ||
       (playerSelection === "scissors" && computerSelection === "paper")
-    ) {  
+    ){  
       const p = document.createElement('p');
       p.innerText = `You win! ${playerSelection} beats ${computerSelection}`;
       outcomeDiv.appendChild(p);
@@ -47,22 +49,38 @@ const winnerResult = (playerScore, computerScore) => {
   if (playerScore === 5) {
     const h3 = document.createElement('h3');
     h3.classList.add('player_won');
+    resetGame();
     h3.innerText = `You won ${playerScore} to ${computerScore}. Human power!`;
-    outcomeDiv.appendChild(h3);
+    outcomeDiv.append(h3);
   }
-
-   else if (computerScore === 5) {
+  else if (computerScore === 5) {
     const h3 = document.createElement('h3');
     h3.classList.add('computer_won');
+    resetGame();
     h3.innerText = `You lost ${playerScore} to ${computerScore}. Computer power!`;
-    outcomeDiv.appendChild(h3);
+    outcomeDiv.append(h3);
   }
+}
+
+const updatedScores = (playerScore, computerScore) => {
+  playerScoreDiv.innerText = `Player Score: ${playerScore}`;
+  computerScoreDiv.innerText = `Computer Score: ${computerScore}`;
+}
+
+const resetGame = () => {
+  playerScore=0;
+  computerScore = 0;
+
+  outcomeDiv.innerText = '';
+
+  updatedScores(playerScore, computerScore);
 }
 
 rockButton.addEventListener("click", () => {
   const computerSelection = getComputerChoice();
   const playerSelection = "rock";
   playRound(playerSelection, computerSelection);
+  updatedScores(playerScore, computerScore);
   winnerResult(playerScore, computerScore);
 })
 
@@ -70,6 +88,7 @@ paperButton.addEventListener("click", () => {
   const computerSelection = getComputerChoice();
   const playerSelection = "paper";
   playRound(playerSelection, computerSelection);
+  updatedScores(playerScore, computerScore);
   winnerResult(playerScore, computerScore);
 })
 
@@ -77,16 +96,6 @@ scissorsButton.addEventListener("click", () => {
   const computerSelection = getComputerChoice();
   const playerSelection = "scissors";
   playRound(playerSelection, computerSelection);
+  updatedScores(playerScore, computerScore);
   winnerResult(playerScore, computerScore);
 })
-
-
-  
-
-
-  
-
-
-
-  
-
