@@ -5,22 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
   
-  <div class="container">
-    <button class="rock">Rock</button>
-    <button class="paper">Paper</button>
-    <button class="scissors">Scissors</button>
+  <div class='header'>
+  <h1>Rock, paper or scirssors?</h1>
+  <p>Lets see if you can beat the computer</p>
   </div>
-
-  <div class="running_score">
-    <h1 class="player_score"></h1>
-    <h1 class="computer_score"></h1>
-  </div>
-
   
-  <div class="outcome"></div>
+  <div class="container">
+    <button class="rock">
+      <img src="/images/rock_image.jpg" alt="Rock Image" />
+    </button>
+    <button class="paper">
+      <img src="/images/paper_image.jpg" alt="Paper Image" />
+    </button>
+    <button class="scissors">
+      <img src="/images/scissors_image.jpg" alt="Scissors Image" />
+    </button>
+  </div>
+
+  <div class="footer">
+    <div class="running_score">
+      <h1 class="player_score"></h1>
+      <h1 class="computer_score"></h1>
+    </div>
+
+    
+    <div class="outcome"></div>
+  </div>  
   
   <script src="javascript.js"></script>
 </body>
