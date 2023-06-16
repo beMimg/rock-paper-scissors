@@ -16,7 +16,7 @@ align-items: center;
 margin-bottom: 40px;
 background: #1f2937;
 color: white;
-padding: 20px;
+height: 150px;
 }
 
 .container {
@@ -46,7 +46,7 @@ padding: 20px;
   background: #1f2937;
   color: white;
   margin-top: auto;
-  padding: 20px;
+  height: 150px;
 }
 .running_score{
   display: flex;
@@ -58,5 +58,4 @@ padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }

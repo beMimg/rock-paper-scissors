@@ -49,18 +49,18 @@ function playRound(playerSelection, computerSelection) {
 
 const winnerResult = (playerScore, computerScore) => {
   if (playerScore === 5) {
-    const h3 = document.createElement('h3');
-    h3.classList.add('player_won');
+    const h1 = document.createElement('h1');
+    h1.classList.add('player_won');
     resetGame();
-    h3.innerText = `You won ${playerScore} to ${computerScore}. Human power!`;
-    outcomeDiv.append(h3);
+    h1.innerText = `You won ${playerScore} to ${computerScore}. Human power!`;
+    outcomeDiv.append(h1);
   }
   else if (computerScore === 5) {
-    const h3 = document.createElement('h3');
-    h3.classList.add('computer_won');
+    const h1 = document.createElement('h1');
+    h1.classList.add('computer_won');
     resetGame();
-    h3.innerText = `You lost ${playerScore} to ${computerScore}. Computer power!`;
-    outcomeDiv.append(h3);
+    h1.innerText = `You lost ${playerScore} to ${computerScore}. Computer power!`;
+    outcomeDiv.append(h1);
   }
 }
 
