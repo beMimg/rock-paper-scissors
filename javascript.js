@@ -27,7 +27,6 @@ function playRound(playerSelection, computerSelection) {
       p.innerText = `You lose! ${computerSelection} beats ${playerSelection}`;
       outcomeDiv.appendChild(p);
       computerScore++;
-      return false;
   } else if (
       (playerSelection === "rock" && computerSelection === "scissors") ||
       (playerSelection === "paper" && computerSelection === "rock") ||
@@ -37,7 +36,6 @@ function playRound(playerSelection, computerSelection) {
       p.innerText = `You win! ${playerSelection} beats ${computerSelection}`;
       outcomeDiv.appendChild(p);
       playerScore++;
-      return true;
     } else if (playerSelection === computerSelection){
       const p = document.createElement('p');
       p.innerText = `It's a draw! You both picked ${playerSelection}`;
